@@ -79,6 +79,26 @@ console.log("Eng kichik son:", findMin); // Natija: -28
 // Test
 const array = [3, -1, 4, 1, -5, 9, 2, -6, 5, 3, 5]; 
 
+// Funksiya: Eng katta son va uning indeksi
+function findMaxWithIndex(arr) {
+  if (arr.length === 0) return null;
+
+  let max = arr[0];
+  let index = 0;
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+      index = i;
+    }
+  }
+
+  return {max, index}
+};
+const result = findMaxWithIndex(array);
+console.log("Eng katta son: ", result.max);
+console.log('Indexsi: ', result.index);
+
 
 // ====MAX STAR ==== 
 function Big(arr) {
@@ -126,3 +146,68 @@ function minFuction(num) {
   return num.length === 0 ? null : Math.min(...array);
 }
 console.log(`Eng kichik son: ${minFuction(array)}`); // Natija: -6
+
+
+// sort() metodi yordamida eng katta sonni topish
+
+// 🔍 Foydali, lekin ehtiyotkorlik bilan ishlatiladi:
+// Massivni sort qilib, oxirgi elementni olish mumkin. Lekin bu usul massivni o‘zgartiradi.
+// ✅ sort() metodining vazifasi
+// sort() — massiv ichidagi elementlarni tartiblash uchun ishlatiladi.
+// 🔧 Raqamlar bilan ishlaganda, sort() ga taqqoslash funksiyasi kerak:
+const array_Numbers = [-12, 45, -1, 67, 3, 89, -24, 90, 11];
+
+// Avval nusxasini olamiz, asl massiv o‘zgarmasin
+const sortedMax = [...array_Numbers].sort((a, b) => a - b); // O'sish tartibi
+const sortedMin = [...array_Numbers].sort((a, b) => b - a); // Kamayish tartibi
+
+// ====MAX STAR ==== 
+const maxsimum = sortedMax[sortedMax.length - 1];
+console.log("Eng katta son:", maxsimum); // 90
+
+// ====MIN STAR ==== 
+const minimum = sortedMin[sortedMin.length - 1];
+console.log("Eng kichik son:", minimum); // -24
+
+// 📌 Ogohlantirish:
+// sort() asl massivni o‘zgartiradi! Agar asl massiv saqlanib qolishi kerak bo‘lsa, uni slice() bilan nusxa oling:
+
+const sliceCopy_Max = array_Numbers.slice().sort((a, b) => a - b); // nusxa + sort
+const sliceCopy_Min = array_Numbers.slice().sort((a, b) => b - a); // nusxa + sort
+
+const slice_Max = sliceCopy_Max[sliceCopy_Max.length - 1];
+const slice_Min = sliceCopy_Min[sliceCopy_Min.length -1];
+
+console.log("Asl massiv:", array_Numbers); // [-12, 45, -1, 67, 3, 89, -24, 90, 11]
+console.log("Eng katta son: ", sliceCopy_Max); // 90 [-24, -12, -1, 3, 11, 45, 67, 89, 90]
+console.log("Eng kichik son: ", sliceCopy_Min); // -24 [90, 89, 67, 45, 11, 3, -1, -12, -24]
+
+
+// ✅ Reduce() bilan eng katta sonni topish
+// 🔧 Funksional uslubdagi yechim:
+
+// ====MAX STAR ==== 
+const reduce_Max = array_Numbers.reduce((acc, current) => {
+  return current > acc ? current : acc;
+});
+console.log("Eng katta son:", reduce_Max); // 90
+
+// ====MIN STAR ==== 
+const reduce_Min = array_Numbers.reduce((acc, current) => {
+  return current < acc ? current : acc;
+});
+console.log("Eng kichik son:", reduce_Min); // -24
+
+
+// Funksiya reduce()bilan yoziladi
+// ====MAX STAR ==== 
+function findMaxReduce(arr) {
+  return array_Numbers.reduce((acc, current) => (current > acc ? current : acc), arr[0])
+}
+console.log("Reduce bilan eng katta:", findMaxReduce(array_Numbers)); // 90
+
+// ====MIN STAR ==== 
+function findMinReduce(arr) {
+  return array_Numbers.reduce((acc, current) => (current < acc ? current : acc), arr[0])
+}
+console.log("Reduce bilan eng katta:", findMinReduce(array_Numbers)); // -24
