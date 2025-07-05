@@ -31,8 +31,6 @@ for (let i = 1; i < numbers.length; i++) {
 console.log("Eng katta son:", max); // Natija: Eng katta son: 90
 
 
-
-
 // 1-Usul for loop eng kichik son topish
 // 2-qadam: Massivni aylanib chiqamiz
 // ====MIN STAR ==== 
@@ -72,14 +70,15 @@ const findMax = Math.max(...numbers);
 // ====MIN STAR ==== 
 const findMin = Math.min(...numbers);
 
-
 console.log("Eng katta son:", findMax); // Natija: 90
 console.log("Eng kichik son:", findMin); // Natija: -28
+
 
 // 4-Usul
 // Funksiya Orqali Katta Va Kichik Massivni aniqlash
 // Test
 const array = [3, -1, 4, 1, -5, 9, 2, -6, 5, 3, 5]; 
+
 
 // ====MAX STAR ==== 
 function Big(arr) {
@@ -95,6 +94,7 @@ function Big(arr) {
     return max;
 };
 console.log(`Eng katta son: ${Big(array)}`); // Natija: 9
+
 
 // ====MIN STAR ==== 
 function Small(arr) {
@@ -112,9 +112,9 @@ function Small(arr) {
 console.log(`Eng kichik son: ${Small(array)}`); // Natija: -6
 
 
-// ====MAX STAR ==== 
 // Alternativ usul sifatida JavaScript'ning o'rnatilgan Math.max va Math.min funksiyasi va spread operatoridan foydalanish mumkin:
 
+// ====MAX STAR ==== 
 function maxFuction(num) {
   return num.length === 0 ? null : Math.max(...array);
 }
