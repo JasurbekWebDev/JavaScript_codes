@@ -22,6 +22,7 @@ let min = 0;
 
 // 1-Usul for loop eng katta son topish
 // 2-qadam: Massivni aylanib chiqamiz
+// ====MAX STAR ==== 
 for (let i = 1; i < numbers.length; i++) {
   if (numbers[i] > max) {
     max = numbers[i]; // yangi katta qiymat topildi
@@ -34,6 +35,7 @@ console.log("Eng katta son:", max); // Natija: Eng katta son: 90
 
 // 1-Usul for loop eng kichik son topish
 // 2-qadam: Massivni aylanib chiqamiz
+// ====MIN STAR ==== 
 for (let i = 1; i < numbers.length; i++) {
   if (numbers[i] < min) {
     min = numbers[i]; // yangi kichik qiymat topildi
@@ -43,6 +45,7 @@ console.log("Eng kichik son:", min); // Natija: Eng kichik son: -28
 
 
 // 2-Usul forEach Metodi orqali eng katta son topish
+// ====MAX STAR ==== 
 numbers.forEach((num) => {
     if (num > max) {
         max = num;
@@ -52,6 +55,7 @@ console.log("Eng katta son:", max); // Natija: 90
 
 
 // 2-Usul forEach Metodi orqali eng kichik son topish
+// ====MIN STAR ==== 
 numbers.forEach((num) => {
     if (num < min) {
         min = num;
@@ -62,8 +66,13 @@ console.log("Eng kichik son:", min); // Natija: -28
 
 // ✅ Yana bir oddiy variant: Math.max() va Math.min() Metodi bilan:
 // 3-Usul
+// ====MAX STAR ==== 
 const findMax = Math.max(...numbers);
+
+// ====MIN STAR ==== 
 const findMin = Math.min(...numbers);
+
+
 console.log("Eng katta son:", findMax); // Natija: 90
 console.log("Eng kichik son:", findMin); // Natija: -28
 
@@ -72,6 +81,7 @@ console.log("Eng kichik son:", findMin); // Natija: -28
 // Test
 const array = [3, -1, 4, 1, -5, 9, 2, -6, 5, 3, 5]; 
 
+// ====MAX STAR ==== 
 function Big(arr) {
     if (arr.length === 0) return null; // Massiv bo'sh bo'lsa null qaytaradi
     let max = arr[0]; // Birinchi elementni maksimum deb olamiz
@@ -83,12 +93,10 @@ function Big(arr) {
     }
     
     return max;
-}
-
-
+};
 console.log(`Eng katta son: ${Big(array)}`); // Natija: 9
 
-
+// ====MIN STAR ==== 
 function Small(arr) {
     if (arr.length === 0) return undefined; // Massiv bo'sh bo'lsa undefined qaytaradi
     let max = arr[0]; // Birinchi elementni minumim deb olamiz
@@ -100,11 +108,11 @@ function Small(arr) {
     }
     
     return max;
-}
-
-
+};
 console.log(`Eng kichik son: ${Small(array)}`); // Natija: -6
 
+
+// ====MAX STAR ==== 
 // Alternativ usul sifatida JavaScript'ning o'rnatilgan Math.max va Math.min funksiyasi va spread operatoridan foydalanish mumkin:
 
 function maxFuction(num) {
@@ -112,6 +120,8 @@ function maxFuction(num) {
 }
 console.log(`Eng katta son: ${maxFuction(array)}`); // Natija: 9
 
+
+// ====MIN STAR ==== 
 function minFuction(num) {
   return num.length === 0 ? null : Math.min(...array);
 }
