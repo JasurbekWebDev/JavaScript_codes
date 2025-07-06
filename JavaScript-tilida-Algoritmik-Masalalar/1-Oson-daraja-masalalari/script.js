@@ -5,10 +5,6 @@
 
 // Yechim strategiyasi:
 // Massivni bir marta o'tib, har bir elementni joriy maksimum bilan taqqoslaymiz.
-
-
-
-
 function findMax(arr) {
   if (arr.length === 0) return undefined;
 
@@ -113,3 +109,16 @@ function fibonacciMemo(n, memo = {}) {
     return memo[n];
 };
 console.log(fibonacciMemo(10)); // 55
+
+
+// Fibonachchi ketma-ketligi – bu har bir son o'zidan oldingi ikki sonning yig'indisiga teng bo'lgan ketma-ketlik. U 1, 1, 2, 3, 5, 8, 13, 21 va hokazo tarzida davom etadi. 
+// Qanday qilib Fibonacci ketma-ketligi tuziladi?
+// Fibonachchi ketma-ketligida birinchi va ikkinchi sonlar odatda 1 ga teng qilib olinadi. Keyin har bir keyingi son o'zidan oldingi ikki sonning yig'indisi sifatida hisoblanadi. Masalan: 
+// 1 (birinchi son)
+// 1 (ikkinchi son)
+// 1 + 1 = 2 (uchinchi son)
+// 1 + 2 = 3 (to'rtinchi son)
+// 2 + 3 = 5 (beshinchi son)
+// 3 + 5 = 8 (oltinchi son) va hokazo.
+
+
