@@ -241,7 +241,7 @@ kattaObyek = null;
 const ism = "Dilfuza";
 const familiya = "Karimova";
 let yosh = 25;
-let tugilganYil = 2024 - yosh;
+let tugilganYil = 2024;
 
 console.log(`Mening ismim ${ism} ${familiya}`);
 console.log(`Men ${yosh} yoshdaman`);
@@ -428,7 +428,9 @@ console.log(`Sizning yoshingiz: ${hozirgiYosh}`);
 
 ## Xulosa
 
-JavaScript o'zgaruvchilari dasturlashning asosiy qismidir. Ularni to'g'ri ishlatish:
+JavaScript o'zgaruvchilari dasturlashning asosiy qismidir. 
+
+O'zgaruvchilarni to'g'ri ishlatish:
 
 1. **Kodni o'qishga oson** qiladi
 2. **Xatolarni kamaytiradi**
@@ -441,11 +443,5 @@ JavaScript o'zgaruvchilari dasturlashning asosiy qismidir. Ularni to'g'ri ishlat
 - `var` dan foydalanmang (zamonaviy kodda)
 - Ma'noli nomlar bering
 - Izchil uslubda yozing
-
-### Keyingi qadamlar:
-- Obyektlar va massivlar bilan chuqurroq ishlash
-- Funksiyalar va scope haqida o'rganish
-- Asinxron dasturlash
-- ES6+ yangi imkoniyatlari
 
 JavaScript o'zgaruvchilarini o'zlashtirib, siz dasturlashda katta qadam tashlaganingiz bo'ladi!
