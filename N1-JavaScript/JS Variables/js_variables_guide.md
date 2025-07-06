@@ -1,11 +1,11 @@
 # JavaScript O'zgaruvchilari - To'liq Qo'llanma
 
 ## Mundarija
-1. [O'zgaruvchi nima?](#o'zgaruvchi-nima)
-2. [O'zgaruvchilarni e'lon qilish](#ozgaruvchilarni-elon-qilish)
-3. [O'zgaruvchi nomlash qoidalari](#ozgaruvchi-nomlash-qoidalari)
-4. [O'zgaruvchilarni ishlatish bo'yicha maslahatlar](#ozgaruvchilarni-ishlatish-boyicha-maslahatlar)
-5. [Amaliy misollar](#amaliy-misollar)
+1. [O'zgaruvchi nima?](#1-ozgaruvchi-nima)
+2. [O'zgaruvchilarni e'lon qilish](#2-ozgaruvchilarni-elon-qilish)
+3. [O'zgaruvchi nomlash qoidalari](#3-ozgaruvchi-nomlash-qoidalari)
+4. [O'zgaruvchilarni ishlatish bo'yicha maslahatlar](#4-ozgaruvchilarni-ishlatish-boyicha-maslahatlar)
+5. [Amaliy misollar](#5-amaliy-misollar)
 
 ---
 
