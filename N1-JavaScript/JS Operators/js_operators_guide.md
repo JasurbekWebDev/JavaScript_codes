@@ -2,13 +2,13 @@
 
 ## Mundarija
 1. [Arithmetic Operators (Arifmetik Operatorlar)](#1-arithmetic-operators-arifmetik-operatorlar)
-2. [Assignment Operators (Tayinlash Operatorlari)](#2-assignment-operators-tayinlash-operatorlar)
-3. [Comparison Operators (Taqqoslash Operatorlari)](#3-comparison-operators-taqqoslash-operatorlar)
-4. [String Operators (Satr Operatorlari)](#4-string-operators-satr-operatorlar)
+2. [Assignment Operators (Tayinlash Operatorlari)](#2-assignment-operators-tayinlash-operatorlari)
+3. [Comparison Operators (Taqqoslash Operatorlari)](#3-comparison-operators-taqqoslash-operatorlari)
+4. [String Operators (Satr Operatorlari)](#4-string-operators-satr-operatorlari)
 5. [Logical Operators (Mantiqiy Operatorlar)](#5-logical-operators-matiqiy-operatorlar)
 6. [Bitwise Operators (Bitli Operatorlar)](#6-bitwise-operators-bitli-operatorlar)
-7. [Ternary Operators (Uchlik Operatorlar)](#7-ternary-operators-uchlil-operatorlar)
-8. [Type Operators (Tur Operatorlari)](#8-type-operators-tur-operatorlar)
+7. [Ternary Operators (Uchlik Operatorlar)](#7-ternary-operators-uchlik-operatorlar)
+8. [Type Operators (Tur Operatorlari)](#8-type-operators-tur-operatorlari)
 
 ---
 
