@@ -6,6 +6,9 @@
 // Yechim strategiyasi:
 // Massivni bir marta o'tib, har bir elementni joriy maksimum bilan taqqoslaymiz.
 
+
+
+
 function findMax(arr) {
   if (arr.length === 0) return undefined;
 

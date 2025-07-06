@@ -17,7 +17,6 @@ Bu qo'llanma JavaScript tilida turli darajadagi algoritmik masalalarni yechish u
 - Masala tavsifi
 - Yechim strategiyasi
 - Kod namunasi
-- Vaqt va xotira murakkabligi
 - Misollar
 
 ---
@@ -49,7 +48,6 @@ console.log(findMax([3, 7, 2, 9, 1])); // 9
 console.log(findMax([-5, -2, -8, -1])); // -1
 ```
 
-**Murakkablik:** O(n) vaqt, O(1) xotira
 
 ### 2. Palindrom tekshirish
 
@@ -81,7 +79,6 @@ console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 console.log(isPalindrome("race a car")); // false
 ```
 
-**Murakkablik:** O(n) vaqt, O(n) xotira
 
 ### 3. Faktorial hisoblash
 
@@ -115,7 +112,6 @@ console.log(factorial(5)); // 120
 console.log(factorialRecursive(5)); // 120
 ```
 
-**Murakkablik:** O(n) vaqt, O(1) xotira (iterativ), O(n) xotira (rekursiv)
 
 ### 4. Fibonacci ketma-ketligi
 
@@ -155,7 +151,6 @@ console.log(fibonacci(10)); // 55
 console.log(fibonacciMemo(10)); // 55
 ```
 
-**Murakkablik:** O(n) vaqt, O(1) xotira (iterativ)
 
 ---
 
@@ -186,7 +181,6 @@ console.log(bubbleSort([64, 34, 25, 12, 22, 11, 90]));
 // [11, 12, 22, 25, 34, 64, 90]
 ```
 
-**Murakkablik:** O(n²) vaqt, O(1) xotira
 
 ### 2. Binary Search
 
@@ -218,7 +212,6 @@ console.log(binarySearch(sortedArray, 7)); // 3
 console.log(binarySearch(sortedArray, 6)); // -1
 ```
 
-**Murakkablik:** O(log n) vaqt, O(1) xotira
 
 ### 3. Anagrams tekshirish
 
@@ -257,7 +250,6 @@ console.log(isAnagram("listen", "silent")); // true
 console.log(isAnagram("hello", "world")); // false
 ```
 
-**Murakkablik:** O(n) vaqt, O(1) xotira
 
 ### 4. Linked List yaratish va boshqarish
 
@@ -418,7 +410,6 @@ console.log(quickSort([3, 6, 8, 10, 1, 2, 1]));
 // [1, 1, 2, 3, 6, 8, 10]
 ```
 
-**Murakkablik:** O(n log n) o'rtacha, O(n²) eng yomon holat
 
 ### 2. Daraxt struktura (Binary Search Tree)
 
@@ -600,7 +591,6 @@ console.log(longestCommonSubsequence("abcde", "ace")); // 3
 console.log(getLCS("abcde", "ace")); // "ace"
 ```
 
-**Murakkablik:** O(m×n) vaqt va xotira
 
 ### 4. Graph algorithms - Depth-First Search (DFS)
 
@@ -727,22 +717,9 @@ console.log("BFS:", graph.bfs("A"));
 
 ---
 
-## Algoritmik murakkablik
 
-### Vaqt murakkabligi
 
-- **O(1)** - Konstanta: Element olish, qo'shish
-- **O(log n)** - Logaritmik: Binary search, balanced tree operatsiyalari
-- **O(n)** - Chiziqli: Massivni bir marta o'tish, linear search
-- **O(n log n)** - Linearithmik: Samarali saralash (merge sort, heap sort)
-- **O(n²)** - Kvadratik: Nested loops, bubble sort
-- **O(2^n)** - Eksponensial: Recursive fibonacci, subset generation
 
-### Xotira murakkabligi
-
-- **O(1)** - Konstanta: In-place algoritmlar
-- **O(n)** - Chiziqli: Qo'shimcha massiv yaratish
-- **O(log n)** - Logaritmik: Rekursiv call stack
 
 ### Tanlash mezonlari
 
