@@ -165,6 +165,7 @@ JavaScript-da o'zgaruvchilarni e'lon qilishning uch yo'li mavjud:
 
 
 ### 5.8 Vaqt bilan ishlash:
+```
 // Joriy vaqt
 (now, year, month, day, hours, mitute)
 
@@ -176,6 +177,7 @@ JavaScript-da o'zgaruvchilarni e'lon qilishning uch yo'li mavjud:
 (yearOfBirth, currentAge)
 
 // Output: Sizning yoshingiz: ~ ~
+```
 ---
 
 ## Xulosa
