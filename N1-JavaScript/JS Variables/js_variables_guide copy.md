@@ -58,24 +58,26 @@ JavaScript-da o'zgaruvchilarni e'lon qilishning uch yo'li mavjud:
 
 ### Scope farqlari:
 // Global scope
+---
 // Function scope
+---
 // Block scope
 ---
 ## 3. O'zgaruvchi nomlash qoidalari
 
 ### 3.1 Majburiy qoidalar:
 1. **Harf, _, yoki $ bilan boshlanishi kerak**
----
+
 2. **Faqat harf, raqam, _, $ bo'lishi mumkin**
----
+
 3. **Kalit so'zlar ishlatilmaydi**
 --- 
 ### 3.2 Tavsiya etiladigan qoidalar:
 
 #### CamelCase uslubi:
-
+---
 #### Konstantalar uchun UPPER_SNAKE_CASE:
-
+---
 #### Ma'noli nomlar:
 ---
 ### 3.3 Nom berish bo'yicha maslahatlar:
@@ -115,42 +117,56 @@ JavaScript-da o'zgaruvchilarni e'lon qilishning uch yo'li mavjud:
 
 ### 5.2 Raqamlar bilan ishlash:
 // Hisoblash
+
 // Foizni hisoblash
 
 
 ### 5.3 Matnlar bilan ishlash:
 // Matn bilan operatsiyalar
+
 // Template literal ishlatish
+
 // Matnni o'zgartirish
 
 
 ### 5.4 Massivlar bilan ishlash:
 // Massiv yaratish
+
 // Massiv ma'lumotlari
+
 // Massivga element qo'shish
+
 // Massiv elementlarini ko'rish
 
 ### 5.5 Obyektlar bilan ishlash:
 // Obyekt yaratish
+
 // Obyekt ma'lumotlarini chiqarish
+
 // O'rtacha bahoni hisoblash
+
 // Obyektga yangi xususiyat qo'shish
 
 
 ### 5.6 Shartli operatorlar:
 // Yosh bo'yicha kategoriya
+
 // Bahoni harf bilan ifodalash
 
 
 ### 5.7 Funksiyalar bilan ishlash:
 // Oddiy funksiya
+
 // Funksiyani chaqirish
+
 // Hisoblash funksiyasi
+
 // Arrow function
 
 
 ### 5.8 Vaqt bilan ishlash:
 // Joriy vaqt
+
 // Yosh hisoblash
 
 
