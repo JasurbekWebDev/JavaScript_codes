@@ -165,4 +165,4 @@ kabi vazifalarni bajarish mumkin. Har bir operator o'zining maxsus vazifasi va i
 
 ---
 
-**Eslatma**: Ushbu qo'llanma JavaScript operatorlarining to'liq ro'yxati va amaliy misollarini o'z ichiga oladi. Amaliyotda ko'proq foydalanish orqali ularni yaxshiroq o'rganishingiz mumkin.
+**Eslatma**: Ushbu qo'llanma JavaScript operatorlarining to'liq ro'yxatini o'z ichiga oladi. Amaliyotda ko'proq foydalanish orqali ularni yaxshiroq o'rganishingiz mumkin.
