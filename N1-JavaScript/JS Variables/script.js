@@ -1,3 +1,192 @@
+
+// 2. O'zgaruvchilarni e'lon qilish
+
+// JavaScript-da o'zgaruvchilarni e'lon qilishning uch xil yo'li mavjud:
+// 2.1 var kalit so'zi
+var Ism = "Ali";
+var yosh = 25;
+var narx;  // undefined qiymat
+// Xususiyatlari:
+
+  // Function scope yoki global scope
+  // Hoisting qo'llab-quvvatlaydi
+  // Qayta e'lon qilish mumkin
+  // Eski uslub (ES5 va avvalgi)
+
+// 2.2 let kalit so'zi
+let NAME = "Ali";
+let YOSH = 30;
+let NARX;  // undefined qiymat
+
+// Xususiyatlari:
+
+  // Block scope
+  // Hoisting yo'q
+  // Qayta e'lon qilish mumkin emas
+  // Zamonaviy uslub (ES6+)
+
+// 2.3 const kalit so'zi
+const PI = 3.14159;
+const MAMLAKAT = "O'zbekiston";
+const FOYDALANUVCHI = {
+    ism: "Javohir",
+    yosh: 28
+};
+
+// Xususiyatlari:
+
+  // Block scope
+  // Hoisting yo'q
+  // Qayta e'lon qilish mumkin emas
+  // Qiymati o'zgarmas (immutable)
+  // E'lon qilishda qiymat berish majburiy
+
+// Scope farqlari:
+// Global scope
+var globalVar = "Global";
+
+function myFunction() {
+  // Function scope
+  var functionVar = "Function";
+
+  if (true) {
+    // Block scope
+    let blockLet = "Block Let";
+    const blockConst = "Block Const";
+    var functionVar2 = "Function 2";
+    console.log(blockLet);
+    console.log(blockConst);
+    
+  }
+  // console.log(blockLet); // Error: blockLet is not defined
+  console.log(functionVar2); // "Function 2" - var function scope
+}
+console.log(myFunction());
+
+
+
+
+
+
+
+
+
+// 3. O'zgaruvchi nomlash qoidalari
+
+// 3.1 Majburiy qoidalar:
+// 1. Harf, _, yoki $ bilan boshlanishi kerak
+let ism = "To'g'ri";
+let _special = "To'g'ri";
+let $price = "To'g'ri";
+// let 1number = "Xato"; // Raqam bilan boshlanmaydi
+
+// 2. Faqat harf, raqam, _, $ bo'lishi mumkin
+let ism123 = "To'g'ri";
+let _sana_2024 = "To'g'ri";
+// let ism-familiya = "Xato"; // Tire ishlatilmaydi
+
+// 3. Kalit so'zlar ishlatilmaydi
+// let if = "Xato";      // if - kalit so'z
+// let function = "Xato"; // function - kalit so'z
+// let myIf = "To'g'ri";  // Buni ishlatish mumkin
+
+
+// 3.2 Tavsiya etiladigan qoidalar:
+// CamelCase uslubi:
+let foydalanuvchiIsmi = "Jasurbek";
+let maksimalNarx = 1000;
+let joriyVaqt = new Date();
+
+
+// Konstantalar uchun UPPER_SNAKE_CASE:
+const MAKSIMAL_YOSH = 100;
+const PI_QIYMATI = 3.14159;
+const MAMLAKAT_KODI = "UZ";
+
+// Ma'noli nomlar:
+// Yomon:
+let a = 5;
+let b = "Ali";
+let d = new Date();
+
+// Yaxshi:
+let foydalanuvchilarSoni = 5;
+let foydalanuvchi_ismi = "Jasurbek";
+let joriy_vaqt = new Date();
+
+// 3.3 Nom berish bo'yicha maslahatlar:
+// Qisqa va aniq bo'lsin
+// Ma'noli bo'lsin
+// Ingliz tilidagi so'zlardan foydalaning
+// Izchil bo'ling (bir xil uslubda)
+
+
+// 4. O'zgaruvchilarni ishlatish bo'yicha maslahatlar
+
+// 4.1 Qaysi kalit so'zni ishlatish:
+
+// const - birinchi tanlov:
+const userName = "Ali";
+const maximumScore = 100;
+const settings = {
+  color: "ko'k",
+  volume: "katta"
+}
+
+// let - qiymat o'zgarsa:
+let count = 0;
+let currentIndex = 0;
+let active = false;
+
+// Sikl davomida o'zgaradi
+for (let i = 0; i < 10; i++) {
+  count += i;
+}
+console.log(count); // Output: 45
+
+// var - ishlatmang (eski kod):
+
+// Eski uslub - ishlatmang
+// var x = 10;
+
+// Zamonaviy uslub - ishlating
+// const x = 10;
+
+
+// 4.2 Xatoliklardan qochish:
+
+// Hoisting muammosi:
+// Noto'g'ri:
+console.log(x); // undefined
+var x = 5;
+
+// To'g'ri:
+const y = 5;
+console.log(y); // 5
+
+// Scope muammosi:
+// Noto'g'ri:
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000); // 3, 3, 3
+}
+
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1000); // 0, 1, 2
+}
+
+
+// 4.3 Xotira boshqaruvi:
+// Katta obyektlar uchun
+
+let bigObject = {
+  // katta ma'lumotlar
+}
+
+// Ishlatgandan keyin tozalash
+bigObject = null;
+
+
+
 // 5. Amaliy misollar
 
 // 5.1 Oddiy o'zgaruvchilar

@@ -185,7 +185,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-#### `var` - ishlatmang (zamonaviy kodda):
+#### `var` - ishlatmang (eski kod):
 ```javascript
 // Eski uslub - ishlatmang
 var x = 10;
