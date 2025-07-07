@@ -170,7 +170,6 @@ JavaScript-da o'zgaruvchilarni e'lon qilishning uch yo'li mavjud:
 (now, year, month, day, hours, mitute)
 
 // Output: Bugun: 0.0.0000 
-
 // Output: Vaqt: 00.00
 
 // Yosh hisoblash
