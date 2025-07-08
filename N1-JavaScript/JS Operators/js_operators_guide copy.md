@@ -82,6 +82,43 @@ Satrlar bilan ishlash uchun ishlatiladi.
 ---
 
 ## 5. Logical Operators (Mantiqiy Operatorlar)
+JavaScript-da uchta asosiy mantiqiy operator mavjud: || (yoki), && (va), va ! (emas). Ular o'zgaruvchilar yoki qiymatlar ustida mantiqiy amallarni bajarish uchun ishlatiladi.
+
+1. || (yoki) operatori:
+Ushbu operator ikkita operanddan biri rost bo'lsa, natija rost bo'ladi. Agar ikkalasi ham yolg'on bo'lsa, natija yolg'on bo'ladi.
+
+``` JavaScript
+let x = 5;
+let y = 10;
+
+console.log(x > 2 || y < 5);  // true (chunki x > 2 rost)
+console.log(x > 10 || y < 5); // false (chunki ikkala shart ham yolg'on)
+```
+---
+2. && (va) operatori:
+Ushbu operator ikkita operand ham rost bo'lsa, natija rost bo'ladi. Agar bittasi yoki ikkalasi ham yolg'on bo'lsa, natija yolg'on bo'ladi.
+``` JavaScript
+let x = 5;
+let y = 10;
+
+console.log(x > 2 && y < 15); // true (chunki ikkala shart ham rost)
+console.log(x > 10 && y < 5);  // false (chunki x > 10 yolg'on)
+```
+---
+3. ! (emas) operatori:
+Ushbu operator operandning mantiqiy qiymatini inkor qiladi. Ya'ni, agar operand rost bo'lsa, natija yolg'on, agar operand yolg'on bo'lsa, natija rost bo'ladi.
+---
+``` JavaScript
+let x = 5;
+
+console.log(!(x > 2));  // false (chunki x > 2 rost, emas operatori uni yolg'onga aylantiradi)
+console.log(!(x < 2));  // true (chunki x < 2 yolg'on, emas operatori uni rostga aylantiradi)
+```
+---
+Qo'shimcha ma'lumot:
+Mantiqiy operatorlar odatda shartli ifodalarda, masalan, if bayonotlarida yoki sikllarda ishlatiladi.
+Ularning yordamida murakkab mantiqiy shartlarni tuzish mumkin.
+JavaScript-da && operatori birinchi yolg'on operandni, || operatori esa birinchi rost operandni qaytarishi mumkin.
 
 Mantiqiy qiymatlar bilan ishlash uchun ishlatiladi.
 
