@@ -315,3 +315,15 @@ user();
 
 // 3. Imtihon natijasi
 // Agar ball 60 dan yuqori bo'lsa "O'tdingiz" chiqaring
+
+
+// 4. Telefon batareyasi
+// Agar batareya 20% dan kam bo'lsa "Quvvatlash kerak" chiqaring
+
+// 5. Yoshga qarab kirish
+// Agar yosh 16 dan katta bo'lsa "Kirishingiz mumkin" chiqaring
+let age = 20;
+if (age > 16) {
+  console.log("Kirishingiz mumkin");
+  
+}
