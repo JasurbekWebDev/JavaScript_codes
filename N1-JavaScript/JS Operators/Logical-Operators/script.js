@@ -304,3 +304,14 @@ function user() {
 }
 
 user();
+
+
+
+// 1. Harorat tekshrish
+// Agar harorat 30 dan yuqori bo'lsa "Issiq kun" chiqaring
+
+// 2. Kitob sahifasi
+// // Agar kitob 200 sahifadan ko'p bo'lsa "Qalin kitob" chiqaring
+
+// 3. Imtihon natijasi
+// Agar ball 60 dan yuqori bo'lsa "O'tdingiz" chiqaring
