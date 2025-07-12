@@ -1,53 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logical Operators</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Ovoz berish tizimi</title>
+  <style>
+    body {
+      font-family: Arial;
+      max-width: 500px;
+      margin: 50px auto;
+    }
+    .message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
-  <h1 style="text-align: center;">Logical Operators</h1>
-  <!-- 
-  <div class="country-section" style="display: none;">
-    <h2 id="title"></h2>
-    <div id="container">
-      <label for="age">Yoshingiz 18 dan kattami:</label>
-      <input type="number" id="user-age" placeholder="Yoshingizni kiriting...">
-      <label for="country">Fuqarolik:</label>
-      <input type="text" id="user-country" placeholder="Mamlakatni kiriting...">
-    </div>
-    <div id="email-container" class="email-container">
-      <label for="email">Email:</label>
-      <input type="email" id="user-email" placeholder="Emailingizni kiriting...">
-      <label for="phone">Phone number:</label>
-      <input type="tel" id="tel-number" placeholder="Telefon raqamingiz...">
-    </div>
-    <p id="result1"></p>
-    <button id="btn">Yuborish</button>
-  </div> -->
 
-  <div class="settings-section">
-    <p id="result"></p>
-    <div class="container">
-      <div class="parent">
-        <span class="title">pullik obuna</span>
-        <label for="subscription"><input type="checkbox" id="enable-subscription">On</label>
-        <label for="unsubscription"> <input type="checkbox" id="paid-unsubscription">Off<label>
-      </div>
-      <div class="parent">
-        <span class="title">reklamani o‘chirish</span>
-        <label for="advertising"> <input type="checkbox" id="enable-advertising">On</label>
-        <label for="remove"><input type="checkbox" id="remove-ad">Off</label>
-      </div>
-      <button id="btn">Yuborish</button>
-    </div>
-  </div>
+  <h2>Kimga ovoz bermoqchisiz?</h2>
 
+  <form id="voteForm">
+    <label><input type="radio" name="candidate" value="A"> Nomzod A</label><br>
+    <label><input type="radio" name="candidate" value="B"> Nomzod B</label><br>
+    <label><input type="radio" name="candidate" value="C"> Nomzod C</label><br><br>
+    <button type="submit">Ovoz berish</button>
+  </form>
 
-  <script src="script.js"></script>
+  <div class="message" id="message"></div>
+
+  <h3>Ovozlar soni:</h3>
+  <ul id="results">
+    <li>Nomzod A: <span id="countA">0</span></li>
+    <li>Nomzod B: <span id="countB">0</span></li>
+    <li>Nomzod C: <span id="countC">0</span></li>
+  </ul>
+
+  <script>
+    const form = document.getElementById('voteForm');
+    const message = document.getElementById('message');
+    const results = {
+      A: document.getElementById('countA'),
+      B: document.getElementById('countB'),
+      C: document.getElementById('countC'),
+    };
+
+    // Ovozlar localStorage'dan o'qiladi yoki boshlang'ich qiymatga o'rnatiladi
+    let votes = JSON.parse(localStorage.getItem('votes')) || { A: 0, B: 0, C: 0 };
+
+    // Ovozlar sonini ekranga chiqarish
+    function displayVotes() {
+      results.A.textContent = votes.A;
+      results.B.textContent = votes.B;
+      results.C.textContent = votes.C;
+    }
+
+    // Dastlabki holatni chiqarish
+    displayVotes();
+
+    // Foydalanuvchi allaqachon ovoz berganmi?
+    const hasVoted = localStorage.getItem('hasVoted');
+    // delete hasVoted;
+
+    if (hasVoted) {
+      message.textContent = "❗ Siz allaqachon ovoz bergansiz.";
+      form.style.display = "none";
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const selected = document.querySelector('input[name="candidate"]:checked');
+
+      if (!selected) {
+        message.textContent = "Iltimos, nomzod tanlang.";
+        return;
+      }
+
+      const candidate = selected.value;
+
+      // Ovoz qo‘shish
+      votes[candidate]++;
+      localStorage.setItem('votes', JSON.stringify(votes));
+      localStorage.setItem('hasVoted', true);
+
+      message.textContent = "✅ Ovoz uchun rahmat!";
+      form.style.display = "block";
+
+      displayVotes();
+    });
+  </script>
+
 </body>
-
 </html>

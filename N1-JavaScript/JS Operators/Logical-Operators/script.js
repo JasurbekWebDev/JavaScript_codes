@@ -222,108 +222,221 @@
 
 // user();
 
-function user() {
-  const btn = document.getElementById('btn');
-  const result = document.getElementById('result');
-  result.className = 'result-element';
+// function user() {
+//   const btn = document.getElementById('btn');
+//   const result = document.getElementById('result');
+//   result.className = 'result-element';
 
-  function checkPermissions() {
-    const enableSubscription = document.getElementById('enable-subscription').checked;
-    const paidUnsubscription = document.getElementById('paid-unsubscription').checked;
-    const enableAdvertising = document.getElementById('enable-advertising').checked;
-    const removeAd = document.getElementById('remove-ad').checked;
+//   function checkPermissions() {
+//     const enableSubscription = document.getElementById('enable-subscription').checked;
+//     const paidUnsubscription = document.getElementById('paid-unsubscription').checked;
+//     const enableAdvertising = document.getElementById('enable-advertising').checked;
+//     const removeAd = document.getElementById('remove-ad').checked;
 
-    // 1️⃣ Barcha maydonlar belgilangan bo‘lsa
-    if (
-      enableSubscription &&
-      paidUnsubscription &&
-      enableAdvertising &&
-      removeAd
-    ) {
-      result.textContent = "ℹ️ Belgilangan kombinatsiya tushunarsiz!";
-      result.style.color = "gray";
-      return;
-    }
+//     // 1️⃣ Barcha maydonlar belgilangan bo‘lsa
+//     if (
+//       enableSubscription &&
+//       paidUnsubscription &&
+//       enableAdvertising &&
+//       removeAd
+//     ) {
+//       result.textContent = "ℹ️ Belgilangan kombinatsiya tushunarsiz!";
+//       result.style.color = "gray";
+//       return;
+//     }
 
-    // 2️⃣ Barcha maydonlar bo‘sh bo‘lsa
-    if (
-      !enableSubscription &&
-      !paidUnsubscription &&
-      !enableAdvertising &&
-      !removeAd
-    ) {
-      result.textContent = "⚠️ Maydoni to‘ldiring!";
-      result.style.color = "orange";
-      return;
-    }
+//     // 2️⃣ Barcha maydonlar bo‘sh bo‘lsa
+//     if (
+//       !enableSubscription &&
+//       !paidUnsubscription &&
+//       !enableAdvertising &&
+//       !removeAd
+//     ) {
+//       result.textContent = "⚠️ Maydoni to‘ldiring!";
+//       result.style.color = "orange";
+//       return;
+//     }
 
-    // 3️⃣ enable-subscription + enable-advertising
-    if (enableSubscription && enableAdvertising &&
-        !paidUnsubscription && !removeAd) {
-      result.textContent = "✅ Reklama ko‘rsatilmaydi (Reklamasiz rejim yoqilgan)";
-      result.style.color = "green";
-    }
+//     // 3️⃣ enable-subscription + enable-advertising
+//     if (enableSubscription && enableAdvertising &&
+//         !paidUnsubscription && !removeAd) {
+//       result.textContent = "✅ Reklama ko‘rsatilmaydi (Reklamasiz rejim yoqilgan)";
+//       result.style.color = "green";
+//     }
 
-    // 4️⃣ paid-unsubscription + enable-advertising
-    else if (paidUnsubscription && enableAdvertising &&
-             !enableSubscription && !removeAd) {
-      result.textContent = "⚠️ Qisqa reklama";
-      result.style.color = "blue";
-    }
+//     // 4️⃣ paid-unsubscription + enable-advertising
+//     else if (paidUnsubscription && enableAdvertising &&
+//              !enableSubscription && !removeAd) {
+//       result.textContent = "⚠️ Qisqa reklama";
+//       result.style.color = "blue";
+//     }
 
-    // 5️⃣ enable-subscription + remove-ad
-    else if (enableSubscription && removeAd &&
-             !paidUnsubscription && !enableAdvertising) {
-      result.textContent = "⚠️ Qisqa reklama";
-      result.style.color = "blue";
-    }
+//     // 5️⃣ enable-subscription + remove-ad
+//     else if (enableSubscription && removeAd &&
+//              !paidUnsubscription && !enableAdvertising) {
+//       result.textContent = "⚠️ Qisqa reklama";
+//       result.style.color = "blue";
+//     }
 
-    // 6️⃣ paid-unsubscription + remove-ad
-    else if (paidUnsubscription && removeAd &&
-             !enableSubscription && !enableAdvertising) {
-      result.textContent = "❌ Reklama ko‘rsatiladi (Reklamasiz rejim yoqilmagan)";
-      result.style.color = "red";
-    }
+//     // 6️⃣ paid-unsubscription + remove-ad
+//     else if (paidUnsubscription && removeAd &&
+//              !enableSubscription && !enableAdvertising) {
+//       result.textContent = "❌ Reklama ko‘rsatiladi (Reklamasiz rejim yoqilmagan)";
+//       result.style.color = "red";
+//     }
 
-    // 7️⃣ Boshqa noaniq kombinatsiyalar
-    else {
-      result.textContent = "ℹ️ Belgilangan kombinatsiya tushunarsiz!";
-      result.style.color = "gray";
-    }
+//     // 7️⃣ Boshqa noaniq kombinatsiyalar
+//     else {
+//       result.textContent = "ℹ️ Belgilangan kombinatsiya tushunarsiz!";
+//       result.style.color = "gray";
+//     }
+//   }
+
+//   btn.addEventListener('click', () => {
+//     checkPermissions();
+
+//     // Formani tozalash (ixtiyoriy)
+//     document.getElementById('enable-subscription').checked = false;
+//     document.getElementById('paid-unsubscription').checked = false;
+//     document.getElementById('enable-advertising').checked = false;
+//     document.getElementById('remove-ad').checked = false;
+//   });
+// }
+
+// user();
+
+
+
+// 7. Xavfsizlik tekshiruvi
+// Agar foydalanuvchi parolni kiritmagan bo‘lsa yoki parol uzunligi 6 belgidan kam bo‘lsa, tizim kirishni to‘xtatsin.
+
+// function xavfsizlik() {
+//   const password = document.getElementById('user-password');
+//   const btn = document.getElementById('btn');
+//   const result = document.getElementById('result');
+//   result.className = "result-element";
+
+//   function userData() {
+//     let userPassword = password.value;
+
+//     if (userPassword !== "" && userPassword.length >= 6) {
+//       result.textContent = "✅ Tizimga kirish mumkin";
+//       result.style.color = "green";
+//     } else {
+//       result.textContent = "❌ Tizimga kirish mumkin emas";
+//       result.style.color = "red";
+//     }
+
+//     password.value = "";
+//   }
+
+//   btn.addEventListener('click', userData);
+// }
+
+// xavfsizlik();
+
+
+// 8. Bepul yetkazib berish
+// Xaridor umumiy xarid summasi 500 ming so‘mdan katta yoki chegirma kodidan foydalangan bo‘lsa — yetkazib berish bepul.
+
+// const btn = document.getElementById("btn");
+
+// function delivery() {
+//   const price = document.getElementById('price');
+//   const result = document.getElementById('result');
+//   const usedCode = document.getElementById('used-code').checked; // yangi
+//   result.className = "result-element";
+
+//   const amount = 500;
+//   const priceAmount = parseInt(price.value, 10);
+
+//   if (priceAmount >= amount || usedCode) {
+//     result.textContent = "✅ Yetkazib berish bepul";
+//     result.style.color = "green";
+//   } else {
+//     result.textContent = "❌ Yetkazib berish uchun to‘lov talab qilinadi";
+//     result.style.color = "red";
+//   }
+
+//   price.value = '';
+//   document.getElementById('used-code').checked = false;
+// }
+
+// btn.addEventListener('click', delivery);
+
+
+// 9. Kirish sahifasi
+// Agar foydalanuvchi login kiritmagan yoki parol kiritmagan bo‘lsa, "Iltimos, barcha maydonlarni to‘ldiring" degan xabar chiqsin.
+
+// const btn = document.getElementById('btn');
+// function userSave() {
+//   const login = document.getElementById('user-login')
+//   const password = document.getElementById('user-password')
+//   const result = document.getElementById('result');
+//   result.className = "result-element";
+
+  
+//   if (login.value.trim() !== "" && password.value.trim() !== "") {
+//      result.textContent = "✅ Tizimga kirish mumkin";
+//       result.style.color = "green";
+//   } else {
+//     result.textContent = "❌ Iltimos, barcha maydonlarni to‘ldiring";
+//       result.style.color = "red";
+//   }
+
+//   login.value = "";
+//   password.value = "";
+
+  
+// }
+// btn.addEventListener('click', userSave)
+// document.addEventListener('keydown', (e) => {
+//   if (e.key === "Enter") {
+//     userSave()
+//   }
+// })
+
+// 10. Ishchi haftasi
+// Haftaning kuni dushanbadan jumagacha bo‘lsa — "Ish kuni", aks holda — "Dam olish kuni" deb chiqsin.
+
+const btn = document.getElementById("btn");
+
+function weekDays() {
+  const weekDaysInput = document.getElementById('week-days');
+  const resultDiv = document.getElementById('result');
+  resultDiv.className = "result-element"; // Natija diviga CSS klassini qo'shamiz
+
+  // Foydalanuvchi kiritgan matnni olamiz va bir xil formatga keltiramiz
+  // (bo'sh joylarni olib tashlaymiz, kichik harflarga o'tkazamiz)
+  let dayName = weekDaysInput.value.trim().toLowerCase();
+
+  let message = ""; // Natija uchun bo'sh string
+
+  // Haftaning ish kunlari ro'yxati
+  const workDays = ["dushanba", "seshanba", "chorshanba", "payshanba", "juma"];
+  // Haftaning dam olish kunlari ro'yxati
+  const weekendDays = ["shanba", "yakshanba"];
+
+  if (workDays.includes(dayName)) {
+    message = `${dayName.charAt(0).toUpperCase() + dayName.slice(1)} - Bugun ish kuni`;
+    resultDiv.style.color = "green"; // Ish kuni uchun yashil rang
+  } else if (weekendDays.includes(dayName)) {
+    message = `${dayName.charAt(0).toUpperCase() + dayName.slice(1)} - Bugun dam olish kuni`;
+    resultDiv.style.color = "red"; // Dam olish kuni uchun qizil rang
+  } else {
+    message = "Noto'g'ri kun nomi kiritildi. Iltimos, to'g'ri kun nomini kiriting.";
+    resultDiv.style.color = "orange"; // Xato uchun to'q sariq rang
   }
 
-  btn.addEventListener('click', () => {
-    checkPermissions();
+  // Natijani DOMga chiqaramiz
+  resultDiv.textContent = message;
 
-    // Formani tozalash (ixtiyoriy)
-    document.getElementById('enable-subscription').checked = false;
-    document.getElementById('paid-unsubscription').checked = false;
-    document.getElementById('enable-advertising').checked = false;
-    document.getElementById('remove-ad').checked = false;
-  });
+  // Input maydonini tozalaymiz
+  weekDaysInput.value = '';
 }
 
-user();
+// Tugmani bosish hodisasini tinglovchisi
+btn.addEventListener('click', weekDays);
 
 
 
-// 1. Harorat tekshrish
-// Agar harorat 30 dan yuqori bo'lsa "Issiq kun" chiqaring
-
-// 2. Kitob sahifasi
-// // Agar kitob 200 sahifadan ko'p bo'lsa "Qalin kitob" chiqaring
-
-// 3. Imtihon natijasi
-// Agar ball 60 dan yuqori bo'lsa "O'tdingiz" chiqaring
-
-
-// 4. Telefon batareyasi
-// Agar batareya 20% dan kam bo'lsa "Quvvatlash kerak" chiqaring
-
-// 5. Yoshga qarab kirish
-// Agar yosh 16 dan katta bo'lsa "Kirishingiz mumkin" chiqaring
-let age = 20;
-if (age > 16) {
-  console.log("Kirishingiz mumkin");
-  
-}
