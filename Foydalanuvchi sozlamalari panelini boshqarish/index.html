@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <!-- Kodlashni belgilaydi (UTF-8) -->
+  <meta charset="UTF-8">
+  <!-- Mobil qurilmalar uchun moslashuvchan ko‘rinish -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Sahifa sarlavhasi -->
+  <title>Sozlamalar</title>
+  <!-- Inline CSS stillari -->
+  <style>
+    /* Sozlamalar panelini yashiradi */
+    .settings-panel { display: none; }
+
+    /* Panel ochiq bo‘lganda ko‘rsatadi */
+    .settings-panel.active { display: block; }
+
+    /* Qorong‘i tema uchun fon va matn rangi */
+    .dark-theme { background: #333; color: #fff; }
+
+    /* Yorug‘ tema uchun fon va matn rangi */
+    .light-theme { background: #fff; color: #000; }
+
+    /* Muvaffaqiyat xabarini yashiradi */
+    .success-message { display: none; }
+
+    /* Xabar ko‘rinadigan bo‘lganda stil */
+    .success-message.active { display: block; color: green; }
+
+    /* Forma elementlari uchun umumiy stil */
+    .theme-section { margin: 20px 0; }
+
+    .theme-section label { margin-right: 20px; }
+
+    input[type="text"] { padding: 8px; margin-bottom: 10px; }
+
+    button { padding: 8px 16px; cursor: pointer; }
+
+  </style>
+</head>
+<body>
+  <!-- Sozlamalar panelini ochish/yopish tugmasi -->
+  <button id="settingsBtn">Sozlamalar</button>
+  <!-- Sozlamalar paneli -->
+  <div id="settingsPanel" class="settings-panel">
+    <!-- Foydalanuvchi ismi uchun input -->
+    <input type="text" id="userName" placeholder="Ismingizni kiriting">
+    <!-- Tema tanlash uchun radio tugmalar -->
+    <div class="theme-section">
+      <label><input type="radio" name="theme" value="light"> Yorug‘ tema</label>
+      <label><input type="radio" name="theme" value="dark"> Qorong‘i tema</label>
+    </div>
+    <!-- Ma’lumotlarni saqlash tugmasi -->
+    <button id="seveBtn">Saqlash</button>
+  </div>
+  <!-- Muvaffaqiyat xabari -->
+  <div id="successMessage" class="success-message">Ma’lumotlar saqlandi!</div>
+  <!-- JavaScript faylini ulash -->
+  <script src="settings.js"></script>
+</body>
+</html>
