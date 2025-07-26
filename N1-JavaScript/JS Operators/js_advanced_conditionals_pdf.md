@@ -79,6 +79,42 @@ if (seatAvailable && documentsValid) {
   console.log("Parvoz bron qilinmadi");
 }
 ```
+### 6.1 Parvoz bron qilish
+Yuqoridagi kodda (seatAvailable va documentsValid o'zgaruvchilari bilan) faqat oddiy shartli tekshirish amalga oshirilgan, ya'ni form bilan ishlash majburiy emas. Kod shunchaki ikkita mantiqiy o'zgaruvchining (true yoki false) holatiga qarab natija chiqaradi: agar ikkalasi ham true bo'lsa, "Parvoz bron qilindi" deb chiqadi, aks holda "Parvoz bron qilinmadi".
+
+Agar siz form bilan ishlashni nazarda tutayotgan bo'lsangiz, masalan, HTML formasi orqali foydalanuvchi ma'lumotlarini (masalan, yo'lovchi ma'lumotlari yoki hujjatlar holati) kiritish va ularni tekshirish kerak bo'lsa, unda quyidagi qadamlar kerak bo'ladi:
+
+HTML Formasi: Foydalanuvchi ma'lumotlarini kiritish uchun HTML formasini yaratish.
+JavaScript bilan Ma'lumotlarni Olish: Formadan kiritilgan ma'lumotlarni JavaScript yordamida olish va tekshirish.
+Shartli Tekshirish: Olingan ma'lumotlar asosida seatAvailable va documentsValid kabi shartlarni belgilash.
+Masalan, agar formada foydalanuvchi o'rin mavjudligi va hujjatlarning to'g'riligini kiritadigan bo'lsa, quyidagicha kod yozilishi mumkin:
+``` html
+<form id="bookingForm">
+  <label for="seat">O'rin mavjudmi?</label>
+  <input type="checkbox" id="seat" name="seat"><br>
+  <label for="documents">Hujjatlar to'g'rimi?</label>
+  <input type="checkbox" id="documents" name="documents"><br>
+  <button type="submit">Bron qilish</button>
+</form>
+<p id="result"></p>
+```
+``` javascript
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Formani yuborilishini to'xtatish
+    let seatAvailable = document.getElementById("seat").checked;
+    let documentsValid = document.getElementById("documents").checked;
+
+    if (seatAvailable && documentsValid) {
+      document.getElementById("result").innerText = "Parvoz bron qilindi";
+    } else {
+      document.getElementById("result").innerText = "Parvoz bron qilinmadi";
+    }
+  });
+```
+Tushuntirish:
+HTML: Foydalanuvchi o'rin mavjudligi va hujjatlarning to'g'riligini belgilash uchun checkbox'lardan foydalanadi.
+JavaScript: Form submit qilinganda, checkbox'larning holati (checked yoki yo'q) o'qiladi va shunga qarab natija chiqariladi.
+Natija: Agar ikkala shart ham true bo'lsa, "Parvoz bron qilindi" chiqadi, aks holda "Parvoz bron qilinmadi".
 
 ### 7. Onlayn do'kon chegirma
 ```javascript
