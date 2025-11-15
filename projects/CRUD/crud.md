@@ -118,8 +118,11 @@ Department: Marketing (Head: David Lee)
 Bu kabi nested (ichma-ich) tuzilmalar:
 
 ✔ Real hayotdagi tuzilmalarni (kompaniya, universitet, do‘kon, katalog) eng aniq ifodalaydi
+
 ✔ Ma’lumotlar bilan ishlashni tartibli qiladi
+
 ✔ Bo‘limlar va xodimlarni boshqarishni osonlashtiradi
+
 ✔ Har qanday murakkab ma’lumotni model qilishga imkon beradi
 
 Shu struktura bo‘yicha **CRUD (create, read, update, delete)** amallarni ishlab chiqish...
