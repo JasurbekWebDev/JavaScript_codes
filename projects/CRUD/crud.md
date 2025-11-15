@@ -67,21 +67,21 @@ const company = {
 
 ### 1) **Oddiy obyekt ichidagi qiymat**
 
-```js
+```javascipr
 console.log(company.name); 
 // Natija: Tech Solutions Inc.
 ```
 
 ### 2) **Massiv ichidagi obyektga murojaat**
 
-```js
+```javascipr
 console.log(company.departments[0].name);
 // Natija: Engineering
 ```
 
 ### 3) **Massiv ichida massiv → obyekt ichidagi qiymat**
 
-```js
+```javascipr
 console.log(company.departments[0].employees[1].position);
 // Natija: Senior Developer
 ```
