@@ -35,7 +35,7 @@ Xodimlarning o‘zi ham obyekt:
 
 ### **JavaScript kodi:**
 
-```js
+```javascript
 const company = {
   name: "Tech Solutions Inc.",
   location: "Silicon Valley",
@@ -65,21 +65,21 @@ const company = {
 
 ## 📌 **Ma’lumotlarga murojaat qilish (Accessing Data)**
 
-### 1) **Oddiy obyekt ichidagi qiymat**
+### 1 **Oddiy obyekt ichidagi qiymat**
 
 ```js
 console.log(company.name); 
 // Natija: Tech Solutions Inc.
 ```
 
-### 2) **Massiv ichidagi obyektga murojaat**
+### 2 **Massiv ichidagi obyektga murojaat**
 
 ```js
 console.log(company.departments[0].name);
 // Natija: Engineering
 ```
 
-### 3) **Massiv ichida massiv → obyekt ichidagi qiymat**
+### 3 **Massiv ichida massiv → obyekt ichidagi qiymat**
 
 ```js
 console.log(company.departments[0].employees[1].position);
